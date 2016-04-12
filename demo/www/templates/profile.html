@@ -1,0 +1,43 @@
+<ion-view view-title="Profile" >
+    <ion-content ng-class="{expanded:$scope.isExpanded}" >
+        <div class="hero slide-up" style="background-image: url('img/background-zootopia.png');">
+            <div class="content">
+                <div class="avatar" style="background-image: url('img/judy.png');"></div>
+                <h3><a class="light">Judy</a></h3>
+                <h4>bunny_police_zootopia</h4>
+            </div>
+        </div>
+        <div class="tabs tabs-dark tabs-icon-top static">
+            <a ui-sref="app.activity" class="tab-item">
+                <i class="icon ion-arrow-graph-up-right"></i> Activity
+            </a>
+            <a ui-sref="app.friends" class="tab-item">
+                <i class="icon ion-android-people"></i> Friends
+            </a>
+            <a ui-sref="app.gallery" class="tab-item">
+                <i class="icon ion-images"></i> Photos
+            </a>
+        </div>
+        <h4 class="content padding double-padding-x">Following</h4>
+        <div class="list animate-fade-slide-in-right">
+            <a ui-sref="app.friends" class="item item-avatar item-icon-right">
+                <img src="img/nick.png">
+                <h2>Nick</h2>
+                <p>Where is that carrot pen?</p>
+                <i class="icon ion-chatbubble muted"></i>
+            </a>
+            <a ui-sref="app.friends" class="item item-avatar item-icon-right">
+                <img src="img/leopard.png">
+                <h2>Officer Benjamin</h2>
+                <p>Where are my donuts?</p>
+                <i class="icon ion-chatbubble muted"></i>
+            </a>
+            <a ui-sref="app.friends" class="item item-avatar item-icon-right">
+                <img src="img/sheep.png">
+                <h2>Bellwether</h2>
+                <p>I want to repalce Mayor Lionheart!</p>
+                <i class="icon ion-chatbubble muted"></i>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
