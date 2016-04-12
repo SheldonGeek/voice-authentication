@@ -1,0 +1,15 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-voiceit": {
+            "PACKAGE_NAME": "com.ionicframework.sample374926"
+        }
+    },
+    "dependent_plugins": {}
+}

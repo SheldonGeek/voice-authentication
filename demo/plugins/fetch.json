@@ -1,0 +1,10 @@
+{
+    "cordova-plugin-voiceit": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-voiceit"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}

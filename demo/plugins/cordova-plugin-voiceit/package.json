@@ -1,0 +1,42 @@
+{
+  "version": "1.3.2",
+  "name": "cordova-plugin-voiceit",
+  "cordova_name": "VoiceItCordova",
+  "description": "This plugin is a Cordova VoiceIt plugin for that encapsulates VoiceIt's Voice Authentication(Voice Biometrics) API",
+  "license": "MIT",
+  "platforms": [
+    "android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "cordova": {
+    "id": "cordova-plugin-voiceit",
+    "platforms": [
+      "android","ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voiceittech/cordova-plugin-voiceit.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "voice biometrics",
+    "voice",
+    "biometrics",
+    "security",
+    "authentication",
+    "VoiceIt"
+  ],
+  "author": "VoiceIt Technologies LLC.",
+  "bugs": {
+    "url": "https://github.com/voiceittech/cordova-plugin-voiceit/issues"
+  },
+  "homepage": "https://github.com/voiceittech/cordova-plugin-voiceit#readme"
+}
