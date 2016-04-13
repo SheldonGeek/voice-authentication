@@ -87,7 +87,7 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk) {
+.controller('LoginCtrl', function($scope, $state, $timeout, $stateParams, $ionicLoading, ionicMaterialInk) {
     $scope.$parent.clearFabs();
     $timeout(function() {
         $scope.$parent.hideHeader();
@@ -106,6 +106,7 @@ angular.module('starter.controllers', [])
          contentLanguage: "en-US"
        }, function(response) {
          alert('Result: ' + response);
+
        }, function(error) {
          alert('Error: ' + error);
        });
@@ -134,10 +135,14 @@ angular.module('starter.controllers', [])
           accuracyPassIncrement: "5",
           confidence: "85",
           contentLanguage: "en-US"
-        }, function(response) {
-          alert('Result: ' + response);
 
-          //$state.go('app.profile');
+        }, function(response) {
+
+          if(angular.fromJson(response).ResponseCode === "SUC") {
+            $state.go('app.profile');
+          } else {
+            alert('Result: ' + response);
+          }
         }, function(error) {
           alert('Error: ' + error);
         });
