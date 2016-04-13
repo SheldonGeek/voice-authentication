@@ -87,18 +87,16 @@ angular.module('starter.controllers', [])
     };
 })
 
-.controller('LoginCtrl', function($scope, $state, $timeout, $stateParams, $ionicLoading, ionicMaterialInk) {
+.controller('LoginCtrl', function($scope, $state, $rootScope, $timeout, $stateParams, $ionicLoading, ionicMaterialInk) {
     $scope.$parent.clearFabs();
     $timeout(function() {
         $scope.$parent.hideHeader();
     }, 0);
+
     ionicMaterialInk.displayEffect();
+    $scope.show = false;
 
     $scope.recordYourVoice = function() {
-//    $scope.userName
-
-//        $scope.spice = 'chili';
-
        VoiceIt.createEnrollment({
          developerID: "d00958aaa91241fcb3dce9d11306b0e1",
          email: "creation.wide@gmail.com",
@@ -106,23 +104,16 @@ angular.module('starter.controllers', [])
          contentLanguage: "en-US"
        }, function(response) {
          alert('Result: ' + response);
+         $scope.show = false;
+         $scope.$apply();
 
        }, function(error) {
+         $scope.show = false;
+         $scope.$apply();
+
          alert('Error: ' + error);
        });
-//    VoiceIt.createUser({
-//      developerID: "d00958aaa91241fcb3dce9d11306b0e1",
-//      email: "creation.wide@gmail.com",
-//      password: "password1",
-//      firstName: "lei",
-//      lastName: "test"
-//    }, function(response) {
-//      alert('Result: ' + response);
-//
-//    }, function(error) {
-//      alert('Error: ' + error);
-//    });
-//
+         $scope.show = true;
     };
 
     $scope.verifyYourVoice = function() {
@@ -137,22 +128,34 @@ angular.module('starter.controllers', [])
           contentLanguage: "en-US"
 
         }, function(response) {
-
-          if(angular.fromJson(response).ResponseCode === "SUC") {
+         $rootScope.result = response;
+          $scope.show = false;
+          $scope.$apply();
+          var message = angular.fromJson(response);
+          if(message.ResponseCode === "SUC") {
             $state.go('app.profile');
+
           } else {
-            alert('Result: ' + response);
+            alert(message.Result);
+
           }
+
         }, function(error) {
-          alert('Error: ' + error);
+          $scope.show = false;
+          $scope.$apply();
+          var errorJsonResult = angular.fromJson(error).Result;
+          var errorMessage = (errorJsonResult ==="") ? "Internal Server Error":errorJsonResult;
+          alert(errorMessage);
         });
 
+        $scope.show = true;
       };
 
 
 })
 
-.controller('ProfileCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+.controller('ProfileCtrl', function($scope, $stateParams,$rootScope, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+    $scope.messages = angular.fromJson($rootScope.result);
     // Set Header
     $scope.$parent.showHeader();
     $scope.$parent.clearFabs();

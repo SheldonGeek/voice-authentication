@@ -19,7 +19,14 @@
             </a>
         </div>
         <h4 class="content padding double-padding-x">Following</h4>
+
         <div class="list animate-fade-slide-in-right">
+            <div style="margin-left:25px"><strong>Voice Authentication Statistics</strong></div>
+            <div style="margin-left:25px">Result: {{messages.Result}}</div>
+            <div style="margin-left:25px">Confidence: {{messages.Confidence}}</div>
+            <div style="margin-left:25px">EnrollmentID: {{messages.EnrollmentID}}</div>
+            <div style="margin-left:25px">DetectedVoiceprintText: {{messages.DetectedVoiceprintText}}</div>
+            <div style="margin-left:25px">DetectedTextConfidence: {{messages.DetectedTextConfidence}}</div>
             <a ui-sref="app.friends" class="item item-avatar item-icon-right">
                 <img src="img/nick.png">
                 <h2>Nick</h2>

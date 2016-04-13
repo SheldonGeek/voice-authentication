@@ -4,19 +4,18 @@
        <div style="margin-top:120px;">
            <br>
         <div class="hero no-header flat">
-
             <div class="content">
-
                 <h1 style="color:#DF9496;font-size:50px">Voiceprint</h1>
                 <br>
-                        <div class="avatar" style="background-image: url('img/judy.png');"></div>
-                        <h3><a class="light" style="color:#838282">Judy</a></h3>
-                        <h4 style="color:#838282">creation.wide@gmail.com</h4>
+                <div class="avatar" style="background-image: url('img/judy.png');"></div>
+                <h3><a class="light" style="color:#838282">Judy</a></h3>
+                <h4 style="color:#838282">creation.wide@gmail.com</h4>
             </div>
         </div>
-
-        <br>
         <div class="padding">
+            <div style="text-align:center" ng-show="show">
+                <img src="img/ajax-loaderLike.gif">
+            </div>
             <button ng-click="recordYourVoice()" class="button button-full ink" style="background-color:#DF9496"><i class="icon ion-mic-a" style="font-size:35px;"></i>  Record your voiceprint</button>
             <button ng-click="verifyYourVoice()" class="button button-full ink" style="background-color:#DF9496"><i class="icon ion-mic-a" style="font-size:35px;"></i>  Verify your voiceprint</button>
         </div>
