@@ -99,16 +99,27 @@ angular.module('starter.controllers', [])
 
 //        $scope.spice = 'chili';
 
-       VoiceIt.createEnrollment({
-         developerID: "DEVELOPER_ID_HERE",
-         email: "cordova@voiceit-tech.com",
-         password: "password",
-         contentLanguage: "en-US"
-       }, function(response) {
-         alert('Result: ' + response);
-       }, function(error) {
-         alert('Error: ' + error);
-       });
+//       VoiceIt.createEnrollment({
+//         developerID: "DEVELOPER_ID_HERE",
+//         email: "cordova@voiceit-tech.com",
+//         password: "password",
+//         contentLanguage: "en-US"
+//       }, function(response) {
+//         alert('Result: ' + response);
+//       }, function(error) {
+//         alert('Error: ' + error);
+//       });
+VoiceIt.createUser({
+  developerID: "d00958aaa91241fcb3dce9d11306b0e1",
+  email: "creation.wide@gmail.com",
+  password: "password1",
+  firstName: "lei",
+  lastName: "test"
+}, function(response) {
+  alert('Result: ' + response);
+}, function(error) {
+  alert('Error: ' + error);
+});
 
     };
 
